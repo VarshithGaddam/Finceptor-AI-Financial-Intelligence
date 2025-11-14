@@ -1,0 +1,8 @@
+CREATE TABLE personas (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  selected_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+ALTER TABLE personas ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow anon insert" ON personas FOR INSERT TO anon WITH CHECK (true);
+CREATE POLICY "Allow anon select" ON personas FOR SELECT TO anon USING (true);

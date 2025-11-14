@@ -1,0 +1,143 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fce7f3; /* Light pink background */
+  color: #333; /* Darker text for contrast on light background */
+}
+
+/* ===== Reusable Components ===== */
+.btn-primary {
+  background-color: #db2777;
+  color: white;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 10px 15px -3px rgba(219, 39, 119, 0.3), 0 4px 6px -2px rgba(219, 39, 119, 0.2);
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.btn-primary:hover {
+  background-color: #be185d;
+  transform: translateY(-2px);
+}
+
+/* ===== Glassmorphism Card ===== */
+.persona-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #333;
+  font-weight: 600;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.persona-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== Gradient Text for Headings ===== */
+.gradient-text {
+  background: linear-gradient(to right, #9d174d, #db2777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* ===== Glowing Border Animation ===== */
+.glow-border {
+  border: 2px solid transparent;
+  background: linear-gradient(#fce7f3, #fce7f3) padding-box,
+              linear-gradient(90deg, #db2777, #be185d, #9d174d) border-box;
+  animation: glowing 3s linear infinite;
+  border-radius: 1.5rem;
+}
+
+@keyframes glowing {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Floating Bubbles ===== */
+.bubble {
+  position: absolute;
+  background: rgba(236, 72, 153, 0.2); /* Pink with opacity */
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 6s infinite linear;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(calc(var(--drift) * 1px));
+    opacity: 0;
+  }
+}
+
+/* ===== Responsive Typography ===== */
+h1, h2, h3 {
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* ===== Navigation Styles ===== */
+.nav-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-button:hover::after {
+  width: 80%;
+}
+
+.nav-button-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button-primary:hover {
+  transform: translateY(-2px);
+}
+
+.shadow-glow-blue {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* ===== Webkit backdrop filter for Safari compatibility ===== */
+.-webkit-backdrop-filter-blur {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "finceptor-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@pinecone-database/pinecone": "^2.0.0",
+    "@supabase/supabase-js": "^2.45.4",
+    "child_process": "^1.0.2",
+    "next": "^14.0.3",
+    "node-fetch": "^2.6.9",
+    "react": "^18",
+    "react-dom": "^18",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3"
+  }
+}
